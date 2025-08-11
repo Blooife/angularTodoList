@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --main-color: #3e50b6;
+  --magenta-color: #e91e63;
+}
+
+body.dark {
+  --bg-color: #8c8c8c;
+  --text-color: #ffffff;
+  --main-color: #1c1c1c;
+  --magenta-color: #e91e63;
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto,
+  "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}

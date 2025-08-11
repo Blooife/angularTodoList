@@ -1,0 +1,12 @@
+<header class="header">
+  <p class="logo">Modsen Todo list</p>
+
+  <button class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">
+    ☰
+  </button>
+
+  <nav class="nav" [class.open]="isMenuOpen">
+    <a routerLink="/home" routerLinkActive="active" (click)="isMenuOpen = false">Home</a>
+    <a routerLink="/settings" routerLinkActive="active" (click)="isMenuOpen = false">Settings</a>
+  </nav>
+</header>

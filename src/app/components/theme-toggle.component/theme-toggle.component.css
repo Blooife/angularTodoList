@@ -1,0 +1,21 @@
+.section-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.theme-toggle select {
+  width: 220px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle select {
+    width: 100%;
+  }
+}
