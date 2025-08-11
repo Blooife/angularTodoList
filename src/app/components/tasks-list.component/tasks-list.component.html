@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="new-task">
+    <label for="new-task" class="task-label">Add a new task</label>
+    <div class="new-task-row">
+      <input id="new-task" placeholder="Your task"
+             [(ngModel)]="newTaskContent"
+             (keyup.enter)="addOrEditTask(newTaskContent)"/>
+      <button (click)="addOrEditTask(newTaskContent)">{{ buttonText }}</button>
+    </div>
+  </div>
+
+
+  <div class="task-list-container">
+    <div class="task-list-section">
+      <p>Task list</p>
+      <ul class="task-list">
+        @for (task of this.tasks; track task.id) {
+          <li class="task-item">
+            <label class="checkbox-label">
+              <input
+                type="checkbox"
+                [checked]="task.completed"
+                (change)="toggleTaskSelection(task, $event)"
+              />
+              <span [class.completed]="task.completed">{{ task.content }}</span>
+            </label>
+            <div class="task-actions">
+              <i class="fa-solid fa-pen-to-square" style="color: black" (click)="editTask(task)"></i>
+              <i class="fa-solid fa-trash-can"  style="color: var(--magenta-color)" (click)="deleteTask(task.id)"></i>
+            </div>
+          </li>
+        }
+      </ul>
+    </div>
+    <button class="delete-selected" (click)="deleteSelectedTasks()">Deleted selected</button>
+  </div>
+</div>

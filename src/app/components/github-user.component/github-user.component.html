@@ -1,0 +1,18 @@
+<div class="github-user">
+  <p class="section-title">GitHub info</p>
+  <div class="search-box">
+    <input type="text" (keyup.enter)="search()" placeholder="Search name..." [formControl]="searchControl">
+    <i class="fa-solid fa-magnifying-glass" (click)="search()"></i>
+  </div>
+
+  @if(user){
+    <div class="card">
+      <p>Login: <span>{{ user.login }}</span></p>
+      <img [src]="user.avatar_url" alt="avatar" width="100" height="100" />
+    </div>
+  }
+
+  @if(notFound){
+    <p class="not-found">Not found</p>
+  }
+</div>
