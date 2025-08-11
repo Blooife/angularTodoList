@@ -32,7 +32,7 @@ export class TaskStorageService {
     this.saveTasks(tasks);
   }
 
-  editTodo(id: number, content: string): void {
+  editTask(id: number, content: string): void {
     const todos = this.getAllTasks().map(todo => {
       if (todo.id === id) {
         return { ...todo, content };

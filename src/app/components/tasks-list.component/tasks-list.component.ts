@@ -15,10 +15,10 @@ import {FormsModule} from '@angular/forms';
 export class TasksListComponent implements OnInit{
   private addButtonText = "Add todo";
   private editButtonText = "Edit";
-  protected tasks: TaskItem[] | undefined;
-  protected newTaskContent: string | undefined;
-  protected buttonText: string = this.addButtonText;
-  protected editingId: number | null = null;
+  tasks: TaskItem[] | undefined;
+  newTaskContent: string | undefined;
+  buttonText: string = this.addButtonText;
+  editingId: number | null = null;
   @ViewChildren('cb') checkboxes!: QueryList<ElementRef<HTMLInputElement>>;
 
   constructor(private storageService: TaskStorageService) {
@@ -38,7 +38,7 @@ export class TasksListComponent implements OnInit{
       this.tasks?.push(addedTask);
     } else if(this.buttonText === this.editButtonText) {
       if(this.editingId)
-        this.storageService.editTodo(this.editingId, content);
+        this.storageService.editTask(this.editingId, content);
 
       const editedTask = this.tasks?.find(task => task.id === this.editingId);
 

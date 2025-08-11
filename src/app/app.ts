@@ -17,7 +17,6 @@ export class App implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('ngOnInit');
     this.themeService.initTheme();
   }
 }
